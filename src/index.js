@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Link } from "react-router-dom";
 import Home from "./components/Home";
 import Trinkets from "./components/Trinkets";
 import Trinket from "./components/Trinket";
+import data from "./data";
 import "./styles.css";
 
 class App extends React.Component {
@@ -18,7 +19,9 @@ class App extends React.Component {
           </div>
         </nav>
 
-        <Route path="/" exact component={Home} />
+        <Route path="/" exact render={() => {
+            return <Home items = {data} />
+        }} />
         <Route path="/trinkets" exact component={Trinkets} />
         <Route path="/trinket/:id" exact component={Trinket} />
       </div>
