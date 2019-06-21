@@ -19,9 +19,9 @@ class App extends React.Component {
           </div>
         </nav>
 
-        <Route path="/" exact render={() => <Home items = {data} />} />
-        <Route path="/trinkets" exact render ={() => <Trinkets items={data} />} />
-        <Route path="/trinket/:id" exact render ={() => <Trinket items={data} />} />
+        <Route path="/" exact render={(props) => <Home {...props} items = {data} />} />
+        <Route path="/trinkets" exact render ={(props) => <Trinkets {...props} items={data} />} />
+        <Route path="/trinket/:id" exact render ={(props) => <Trinket {...props}items={data} />} />
       </div>
     );
   }
